@@ -148,21 +148,12 @@ Set this to nil to disable fuzzy matching."
            (format "%d " (car current-prefix-arg)))))
      smex-prompt-string)))
 
-(defun  disabled-key ()
-  "Disables keys"
-  (interactive)
-  (print "Key is disabled !")
-)
-
 (defun smex-prepare-ido-bindings ()
   (define-key ido-completion-map (kbd "C-? f") 'smex-describe-function)
   (define-key ido-completion-map (kbd "M-.") 'smex-find-function)
   (define-key ido-completion-map (kbd "C-a") 'move-beginning-of-line)
 
-  (define-key ido-completion-map (kbd "\d") 'disabled-key)
-  (define-key ido-completion-map (kbd "M-\d") 'disabled-key)
   (define-key ido-completion-map (kbd "C-h") 'delete-backward-char)
-  (define-key ido-completion-map (kbd "M-h") 'disabled-key)
 ;  (define-key ido-completion-map (kbd "C-o") 'newline)
 )
 
